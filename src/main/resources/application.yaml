@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: pdf-cli
+  main:
+    web-application-type: NONE
