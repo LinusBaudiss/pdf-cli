@@ -1,11 +1,11 @@
-package de.answer.pdf_cli;
+package de.answer.pdf;
 
-import lombok.extern.slf4j.Slf4j;
 import org.apache.pdfbox.Loader;
 import org.apache.pdfbox.multipdf.Splitter;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDPage;
 import org.apache.pdfbox.pdmodel.PDPageTree;
+import org.slf4j.Logger;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -18,13 +18,13 @@ import java.nio.file.Paths;
 import java.util.List;
 
 @SpringBootApplication
-@Slf4j
 public class PdfCliApplication implements CommandLineRunner {
 
     private static final String INPUT_PDF = "input.pdf";
     private static final String OUTPUT_PDF = "output.pdf";
     private static final String SHUFFLED_TO_SPLIT_PDF = "shuffled_to_split.pdf";
     private static final String TERMINATING_PROGRAM = "terminating program!";
+    private static final Logger log = org.slf4j.LoggerFactory.getLogger(PdfCliApplication.class);
 
     public static void main(String[] args) {
         log.info("STARTING THE APPLICATION");
